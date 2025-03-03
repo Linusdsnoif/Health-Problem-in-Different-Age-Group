@@ -83,7 +83,7 @@ function updateNavigation() {
         const rect = section.getBoundingClientRect();
         const button = document.getElementById(`nav-${group.id}`);
         
-        if (rect.top <= 150 && rect.bottom >= 50) {
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
             d3.select(button)
                 .style("box-shadow", "0 0 0 2px #333");
         } else {
