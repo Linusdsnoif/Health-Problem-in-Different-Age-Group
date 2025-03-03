@@ -19,21 +19,52 @@ function createNavigation() {
     const searchContainer = navBar.append("div")
         .attr("class", "search-container");
     
-    searchContainer.append("input")
+    // Add error message element
+    const errorFeedback = searchContainer.append("div")
+        .attr("class", "error-feedback")
+        .style("color", "red")
+        .style("font-size", "12px")
+        .style("margin-top", "5px")
+        .style("display", "none");
+    
+    // Variable to store the debounce timer
+    let debounceTimer;
+    
+    const searchInput = searchContainer.append("input")
         .attr("type", "number")
         .attr("class", "age-input")
-        .attr("placeholder", "Find your age...")
+        .attr("placeholder", "Find your age (0-100)...")
         .attr("min", "0")
         .attr("max", "100")
         .on("input", function() {
-            const age = +this.value;
-            if (age >= 0 && age <= 100) {
+            // Reset error state
+            errorFeedback.style("display", "none");
+            this.style.borderColor = "#ccc";
+            
+            // Clear any previous timer
+            clearTimeout(debounceTimer);
+            
+            // Set a new timer
+            debounceTimer = setTimeout(() => {
+                const inputValue = this.value.trim();
+                if (!inputValue) return;
+                
+                const age = +inputValue;
+                
+                // Validate age range
+                if (age < 0 || age > 100 || isNaN(age)) {
+                    errorFeedback.text("Please enter an age between 0 and 100");
+                    errorFeedback.style("display", "block");
+                    this.style.borderColor = "red";
+                    return;
+                }
+                
                 // Find the corresponding age group
                 const group = ageGroups.find(g => age >= g.start && age <= g.end);
                 if (group) {
                     scrollToSection(group.id);
                 }
-            }
+            }, 500); // 500ms delay
         });
     
     // Age group navigation buttons
@@ -49,6 +80,14 @@ function createNavigation() {
         .text(d => d.label)
         .style("background-color", d => d.color)
         .on("click", function(_, d) {
+            // Reset search input and error state when clicking a button
+            searchInput.property("value", "");
+            errorFeedback.style("display", "none");
+            searchInput.style("borderColor", "#ccc");
+            
+            // Clear any pending timer
+            clearTimeout(debounceTimer);
+            
             scrollToSection(d.id);
         });
     
