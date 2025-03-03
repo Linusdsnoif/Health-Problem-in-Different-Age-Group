@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation Styles */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    z-index: 100;
+}
+
+.title {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-container {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.age-input {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 5px;
+}
+
+.age-button {
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    flex-grow: 1;
+    min-width: 90px;
+    text-align: center;
+}
+
+.age-button:hover {
+    transform: translateY(-2px);
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4a6fa5;
+    border-radius: 2px;
+    transition: width 0.3s;
+    width: 0%;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    padding: 20px;
+    margin-top: 150px; /* Space for fixed navigation */
+}
+
+.info-div {
+    margin: 20px 0 60px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+
+.info-div h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.info-div p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 200;
+    max-width: 220px;
+}
+
+.tooltip strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.tooltip span {
+    display: block;
+    margin-bottom: 2px;
+}
