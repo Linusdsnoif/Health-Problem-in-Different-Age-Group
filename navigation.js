@@ -133,6 +133,8 @@ function updateNavigation() {
     });
 }
 
+
+
 // Function to scroll to a section
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
