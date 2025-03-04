@@ -78,16 +78,15 @@ body {
     padding: 10px;
     top: 220px;
     font-size: 20px;
+    height: 40px;
 }
 
 .left {
     left: 0;
-    height: 40px;
 }
 
 .right {
     right: 0;
-    height: 40px;
 }
 
 .progress-container {
