@@ -128,7 +128,7 @@ function createTimeline() {
                     <strong>${p.procedure}</strong><br>
                     <b>Count:</b> ${p.count}<br>
                     <b>Percentage:</b> ${p.percentage}%<br>
-                    <b>Gender:</b> ${gender}<br>
+                    <b>Sex:</b> ${gender}<br>
                     <b>Mortality Rate:</b> ${p.mortality_rate}%<br>
                     <b>Avg Operation Time:</b> ${p.avg_operation_time_seconds} hours<br>
                     <b>Avg Hospital Stay:</b> ${p.avg_hospital_stay_days} days
