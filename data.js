@@ -17,6 +17,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 4,
                 "percentage": 0.32706,
                 "mortality_rate": 50.0,
                 "avg_operation_time_seconds": 6.56,
@@ -24,6 +25,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 4,
                 "percentage": 0.50251,
                 "mortality_rate": 50.0,
                 "avg_operation_time_seconds": 1.73,
@@ -31,6 +33,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 1,
                 "percentage": 0.40984,
                 "mortality_rate": 100.0,
                 "avg_operation_time_seconds": 2.5,
@@ -40,6 +43,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 1,
                 "percentage": 0.08177,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 6.56,
@@ -51,6 +55,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Other",
+                "count": 1,
                 "percentage": 0.12563,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.33,
@@ -58,6 +63,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 2,
                 "percentage": 0.6006,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.5,
@@ -69,6 +75,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 3,
                 "percentage": 0.2453,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 8.5,
@@ -76,6 +83,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 5,
                 "percentage": 0.62814,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.2,
@@ -83,6 +91,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 2,
                 "percentage": 0.33167,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.17,
@@ -90,6 +99,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 4,
                 "percentage": 1.2012,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 3.64,
@@ -97,6 +107,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 3,
                 "percentage": 1.22951,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.97,
@@ -106,6 +117,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 2,
                 "percentage": 0.16353,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 5.54,
@@ -113,6 +125,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 1,
                 "percentage": 0.12563,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.75,
@@ -120,6 +133,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 5,
                 "percentage": 1.5015,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 4.29,
@@ -131,6 +145,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Other",
+                "count": 1,
                 "percentage": 0.12563,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.33,
@@ -138,6 +153,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 1,
                 "percentage": 0.13947,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.58,
@@ -145,6 +161,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 2,
                 "percentage": 0.6006,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 4.04,
@@ -152,6 +169,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 1,
                 "percentage": 0.40984,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.75,
@@ -159,6 +177,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Neurological System",
+                "count": 2,
                 "percentage": 22.22222,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.5,
@@ -168,6 +187,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 3,
                 "percentage": 0.1503,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.86,
@@ -175,6 +195,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 1,
                 "percentage": 0.08177,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 7.17,
@@ -182,6 +203,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 3,
                 "percentage": 0.37688,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.81,
@@ -189,6 +211,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 1,
                 "percentage": 0.13947,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.47,
@@ -196,6 +219,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 1,
                 "percentage": 0.3003,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 4.25,
@@ -203,6 +227,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 1,
                 "percentage": 0.30769,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 5.0,
@@ -210,6 +235,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 2,
                 "percentage": 0.81967,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.42,
@@ -221,6 +247,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 28,
                 "percentage": 1.40281,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.72,
@@ -228,6 +255,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 43,
                 "percentage": 3.51594,
                 "mortality_rate": 2.33,
                 "avg_operation_time_seconds": 2.6,
@@ -235,6 +263,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 57,
                 "percentage": 7.1608,
                 "mortality_rate": 1.75,
                 "avg_operation_time_seconds": 1.67,
@@ -242,6 +271,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 13,
                 "percentage": 1.81311,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.72,
@@ -249,6 +279,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 74,
                 "percentage": 12.27197,
                 "mortality_rate": 1.35,
                 "avg_operation_time_seconds": 1.56,
@@ -256,6 +287,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 13,
                 "percentage": 3.9039,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 3.66,
@@ -263,6 +295,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 38,
                 "percentage": 11.69231,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.38,
@@ -270,6 +303,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 2,
                 "percentage": 0.81967,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.08,
@@ -277,6 +311,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 5,
                 "percentage": 7.35294,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.65,
@@ -284,6 +319,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 1,
                 "percentage": 10.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.5,
@@ -291,6 +327,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Neurological System",
+                "count": 1,
                 "percentage": 11.11111,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.5,
@@ -300,6 +337,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 50,
                 "percentage": 2.50501,
                 "mortality_rate": 2.0,
                 "avg_operation_time_seconds": 1.6,
@@ -307,6 +345,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 58,
                 "percentage": 4.74244,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 3.37,
@@ -314,6 +353,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 49,
                 "percentage": 6.15578,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.34,
@@ -321,6 +361,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 20,
                 "percentage": 2.7894,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.61,
@@ -328,6 +369,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 2,
                 "percentage": 0.33167,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.56,
@@ -335,6 +377,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 27,
                 "percentage": 8.10811,
                 "mortality_rate": 3.7,
                 "avg_operation_time_seconds": 3.16,
@@ -342,6 +385,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 17,
                 "percentage": 5.23077,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.34,
@@ -349,6 +393,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 8,
                 "percentage": 3.27869,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.15,
@@ -356,6 +401,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 5,
                 "percentage": 7.35294,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.95,
@@ -363,6 +409,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 2,
                 "percentage": 3.125,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.97,
@@ -370,6 +417,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Neurological System",
+                "count": 5,
                 "percentage": 55.55556,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.52,
@@ -381,6 +429,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 219,
                 "percentage": 10.97194,
                 "mortality_rate": 0.46,
                 "avg_operation_time_seconds": 2.28,
@@ -388,6 +437,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 200,
                 "percentage": 16.35323,
                 "mortality_rate": 0.5,
                 "avg_operation_time_seconds": 2.19,
@@ -395,6 +445,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 157,
                 "percentage": 19.72362,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.53,
@@ -402,6 +453,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 77,
                 "percentage": 10.73919,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.99,
@@ -409,6 +461,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 311,
                 "percentage": 51.57546,
                 "mortality_rate": 0.64,
                 "avg_operation_time_seconds": 1.55,
@@ -416,6 +469,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 59,
                 "percentage": 17.71772,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 3.12,
@@ -423,6 +477,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 99,
                 "percentage": 30.46154,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.06,
@@ -430,6 +485,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 36,
                 "percentage": 14.7541,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.71,
@@ -437,6 +493,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 13,
                 "percentage": 19.11765,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.25,
@@ -444,6 +501,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 11,
                 "percentage": 17.1875,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.59,
@@ -451,6 +509,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 3,
                 "percentage": 30.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.28,
@@ -460,6 +519,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 225,
                 "percentage": 11.27255,
                 "mortality_rate": 1.33,
                 "avg_operation_time_seconds": 2.34,
@@ -467,6 +527,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 204,
                 "percentage": 16.68029,
                 "mortality_rate": 0.49,
                 "avg_operation_time_seconds": 2.92,
@@ -474,6 +535,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 113,
                 "percentage": 14.19598,
                 "mortality_rate": 0.88,
                 "avg_operation_time_seconds": 1.59,
@@ -481,6 +543,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 61,
                 "percentage": 8.50767,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.52,
@@ -488,6 +551,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 62,
                 "percentage": 18.61862,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 3.28,
@@ -495,6 +559,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 48,
                 "percentage": 14.76923,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.26,
@@ -502,6 +567,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 33,
                 "percentage": 13.52459,
                 "mortality_rate": 6.06,
                 "avg_operation_time_seconds": 2.34,
@@ -509,6 +575,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 11,
                 "percentage": 16.17647,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.22,
@@ -516,6 +583,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 16,
                 "percentage": 25.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.76,
@@ -523,6 +591,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 1,
                 "percentage": 10.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.15,
@@ -530,6 +599,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Neurological System",
+                "count": 1,
                 "percentage": 11.11111,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.42,
@@ -541,6 +611,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 397,
                 "percentage": 19.88978,
                 "mortality_rate": 0.25,
                 "avg_operation_time_seconds": 2.2,
@@ -548,6 +619,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 244,
                 "percentage": 19.95094,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.65,
@@ -555,6 +627,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 150,
                 "percentage": 18.84422,
                 "mortality_rate": 2.0,
                 "avg_operation_time_seconds": 1.7,
@@ -562,6 +635,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 197,
                 "percentage": 27.47559,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.18,
@@ -569,6 +643,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 203,
                 "percentage": 33.66501,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.42,
@@ -576,6 +651,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 38,
                 "percentage": 11.41141,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.87,
@@ -583,6 +659,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 76,
                 "percentage": 23.38462,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.76,
@@ -590,6 +667,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 53,
                 "percentage": 21.72131,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.63,
@@ -597,6 +675,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 17,
                 "percentage": 25.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.45,
@@ -604,6 +683,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 2,
                 "percentage": 3.125,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.63,
@@ -611,6 +691,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 1,
                 "percentage": 10.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.17,
@@ -620,6 +701,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 788,
                 "percentage": 39.47896,
                 "mortality_rate": 0.89,
                 "avg_operation_time_seconds": 2.47,
@@ -627,6 +709,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 363,
                 "percentage": 29.68111,
                 "mortality_rate": 0.28,
                 "avg_operation_time_seconds": 3.08,
@@ -634,6 +717,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 187,
                 "percentage": 23.49246,
                 "mortality_rate": 4.28,
                 "avg_operation_time_seconds": 2.09,
@@ -641,6 +725,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 252,
                 "percentage": 35.14644,
                 "mortality_rate": 1.59,
                 "avg_operation_time_seconds": 2.68,
@@ -648,6 +733,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 1,
                 "percentage": 0.16584,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.75,
@@ -655,6 +741,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 106,
                 "percentage": 31.83183,
                 "mortality_rate": 0.94,
                 "avg_operation_time_seconds": 3.03,
@@ -662,6 +749,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 37,
                 "percentage": 11.38462,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.95,
@@ -669,6 +757,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 70,
                 "percentage": 28.68852,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.82,
@@ -676,6 +765,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 12,
                 "percentage": 17.64706,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.13,
@@ -683,6 +773,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 13,
                 "percentage": 20.3125,
                 "mortality_rate": 7.69,
                 "avg_operation_time_seconds": 1.45,
@@ -690,6 +781,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 3,
                 "percentage": 30.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.83,
@@ -701,6 +793,7 @@ const surgicalData = {
         "f": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 124,
                 "percentage": 6.21242,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.2,
@@ -708,6 +801,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 50,
                 "percentage": 4.08831,
                 "mortality_rate": 2.0,
                 "avg_operation_time_seconds": 2.61,
@@ -715,6 +809,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 24,
                 "percentage": 3.01508,
                 "mortality_rate": 8.33,
                 "avg_operation_time_seconds": 1.98,
@@ -722,6 +817,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 32,
                 "percentage": 4.46304,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 2.12,
@@ -729,6 +825,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Reproductive System",
+                "count": 10,
                 "percentage": 1.65837,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.45,
@@ -736,6 +833,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 3,
                 "percentage": 0.9009,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.19,
@@ -743,6 +841,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 4,
                 "percentage": 1.23077,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.77,
@@ -750,6 +849,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 13,
                 "percentage": 5.32787,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.97,
@@ -757,6 +857,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 2,
                 "percentage": 2.94118,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.13,
@@ -764,6 +865,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 12,
                 "percentage": 18.75,
                 "mortality_rate": 8.33,
                 "avg_operation_time_seconds": 0.42,
@@ -773,6 +875,7 @@ const surgicalData = {
         "m": [
             {
                 "procedure": "Gastrointestinal (GI) System",
+                "count": 162,
                 "percentage": 8.11623,
                 "mortality_rate": 0.62,
                 "avg_operation_time_seconds": 2.18,
@@ -780,6 +883,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Hepatobiliary and Pancreatic System",
+                "count": 50,
                 "percentage": 4.08831,
                 "mortality_rate": 2.0,
                 "avg_operation_time_seconds": 2.79,
@@ -787,6 +891,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Other",
+                "count": 44,
                 "percentage": 5.52764,
                 "mortality_rate": 4.55,
                 "avg_operation_time_seconds": 2.09,
@@ -794,6 +899,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Respiratory System",
+                "count": 63,
                 "percentage": 8.78661,
                 "mortality_rate": 1.59,
                 "avg_operation_time_seconds": 2.8,
@@ -801,6 +907,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Genitourinary System",
+                "count": 11,
                 "percentage": 3.3033,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.95,
@@ -808,6 +915,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Endocrine System",
+                "count": 5,
                 "percentage": 1.53846,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.48,
@@ -815,6 +923,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Cardiovascular System",
+                "count": 22,
                 "percentage": 9.01639,
                 "mortality_rate": 4.55,
                 "avg_operation_time_seconds": 2.85,
@@ -822,6 +931,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Lymphatic System",
+                "count": 3,
                 "percentage": 4.41176,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.44,
@@ -829,6 +939,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Integumentary System",
+                "count": 8,
                 "percentage": 12.5,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 1.04,
@@ -836,6 +947,7 @@ const surgicalData = {
             },
             {
                 "procedure": "Musculoskeletal System",
+                "count": 1,
                 "percentage": 10.0,
                 "mortality_rate": 0.0,
                 "avg_operation_time_seconds": 0.42,
