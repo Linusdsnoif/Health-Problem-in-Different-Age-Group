@@ -480,12 +480,12 @@ const surgicalData = {
 
 // Health considerations by age group
 const healthConsiderations = [
-    "Focus on developmental issues and congenital conditions. Minimal surgical interventions unless medically necessary.",
-    "Common procedures address childhood development issues and infections. Emphasis on minimally invasive approaches.",
-    "Procedures often related to common childhood illnesses and injuries. Recovery times tend to be shorter than adults.",
-    "Sports injuries and developmental corrections become more common. Orthodontic and dental surgeries peak during these years.",
-    "Reproductive health and trauma-related procedures increase. First appearance of lifestyle-related surgeries.",
-    "Lifestyle-related conditions begin to drive surgical needs. Increasing prevalence of minimally invasive diagnostic procedures.",
-    "Degenerative conditions and chronic disease management predominate. Joint replacements and cardiac procedures become common.",
-    "Focus shifts to quality of life maintenance and managing complex conditions. Higher surgical risks due to comorbidities."
+    "Infants show high mortaility rates with all procedures ≥ 40%. Longer hospital stays are also common, indicating that recovery rates may be slow. Note: Only 10 infants were documented in the data set.",
+    "Toddlers show low surgical variety with only Genitourinary System and Other. Their hospital stays are moderate, but mortality rates drop to 0%.",
+    "Children start to show more variety in surgical procedures, with long hospital stays for surgeries for the Hepatobiliary and Pancreatic System at an average length of 98.2 days. Mortality rates remain at 0%.",
+    "Teens account for 22% of all neurological system surgeries with 0% mortality across all procedure types and relatively brief hospital stays compared to younger children.",
+    "Young adults dominate neurological surgeries (66.7% of all cases) and show relatively low mortality rates except for genitourinary procedures (2.5%), with most procedures requiring shorter hospital stays.",
+    "Adults undergo the most diverse range of procedures with over half of all reproductive system surgeries occurring in this group, while facing extended recovery periods for integumentary and musculoskeletal procedures.",
+    "Seniors account for the majority of respiratory (62.6%) and gastrointestinal (59.4%) procedures, with concerning mortality rates for integumentary procedures (6.7%) and extended hospital stays.",
+    "Elderly's face elevated mortality risks, particularly for 'other' procedures (5.9%) and integumentary system surgeries (5%), while still accounting for nearly a third of all integumentary procedures despite lower overall surgical volumes."
 ];
