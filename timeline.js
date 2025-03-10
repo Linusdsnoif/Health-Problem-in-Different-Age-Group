@@ -200,7 +200,7 @@ function createTimeline() {
         
         // Add health considerations
         infoDiv.append("h3")
-            .text("Key Health Considerations");
+            .text("Key Considerations");
         
         infoDiv.append("p")
             .html(healthConsiderations[i]);
