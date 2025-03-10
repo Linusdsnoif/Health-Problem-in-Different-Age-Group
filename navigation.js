@@ -34,9 +34,9 @@ function createNavigation() {
     const searchInput = searchContainer.append("input")
         .attr("type", "number")
         .attr("class", "age-input")
-        .attr("placeholder", "Find your age (0-100)...")
+        .attr("placeholder", "Find your age (0-94)...")
         .attr("min", "0")
-        .attr("max", "100")
+        .attr("max", "94")
         .on("input", function() {
             // Reset error state
             errorFeedback.style("display", "none");
