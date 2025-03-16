@@ -63,23 +63,25 @@ body {
     transform: translateY(-2px);
 }
 
-
+/* Male and Female visible during scrolling */
 .left, .right {
-    position: absolute;
+    position: fixed;
     width: 50%;
     text-align: center;
     padding: 10px;
     top: 180px;
     font-size: 20px;
-    
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 90;
+    margin: 0;
 }
 
 .left {
-    left: 0px;
+    left: 0;
 }
 
 .right {
-    right: 0px;
+    right: 0;
 }
 
 .progress-container {
@@ -157,4 +159,3 @@ body {
     display: block;
     margin-bottom: 2px;
 }
-
