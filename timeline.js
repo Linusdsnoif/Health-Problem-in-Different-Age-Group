@@ -191,102 +191,102 @@ function createTimeline() {
         .text(d => `${d.label} (${d.ageRange})`);
 
     // Create procedure bars for each section
-sections.each(function(d, i) {
-    const section = d3.select(this);
-    const data = surgicalData[d.id] || {};
-    const femaleProcedures = [...(data.f || [])].sort((a, b) => b.percentage - a.percentage);
-    const maleProcedures = [...(data.m || [])].sort((a, b) => b.percentage - a.percentage);
-    const color = d.color;
+    sections.each(function(d, i) {
+        const section = d3.select(this);
+        const data = surgicalData[d.id] || {};
+        const femaleProcedures = [...(data.f || [])].sort((a, b) => b.percentage - a.percentage);
+        const maleProcedures = [...(data.m || [])].sort((a, b) => b.percentage - a.percentage);
+        const color = d.color;
 
-    const maxBars = Math.max(femaleProcedures.length, maleProcedures.length);
-    const dynamicStartY = maxBars > 0 ? 80 : 40;
+        const maxBars = Math.max(femaleProcedures.length, maleProcedures.length);
+        const dynamicStartY = maxBars > 0 ? 80 : 40;
 
-    // Create groups for female and male bars
-    const femaleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
-    const maleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
+        // Create groups for female and male bars
+        const femaleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
+        const maleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
 
-    // Find the index of the shortest bar for each gender
-    const shortestFemaleBarIndex = femaleProcedures.reduce((shortestIdx, p, idx) => {
-        return p.percentage < femaleProcedures[shortestIdx].percentage ? idx : shortestIdx;
-    }, 0);
+        // Find the index of the shortest bar for each gender
+        const shortestFemaleBarIndex = femaleProcedures.reduce((shortestIdx, p, idx) => {
+            return p.percentage < femaleProcedures[shortestIdx].percentage ? idx : shortestIdx;
+        }, 0);
 
-    const shortestMaleBarIndex = maleProcedures.reduce((shortestIdx, p, idx) => {
-        return p.percentage < maleProcedures[shortestIdx].percentage ? idx : shortestIdx;
-    }, 0);
+        const shortestMaleBarIndex = maleProcedures.reduce((shortestIdx, p, idx) => {
+            return p.percentage < maleProcedures[shortestIdx].percentage ? idx : shortestIdx;
+        }, 0);
 
-    // Add female bars (left side)
-    const femaleBars = femaleBarGroup.selectAll(".proc-bar-f")
-        .data(femaleProcedures)
-        .enter()
-        .append("g")
-        .attr("class", "proc-bar")
-        .attr("transform", (_, j) => `translate(${width / 2 - 10}, ${j * barSpacing})`);
+        // Add female bars (left side)
+        const femaleBars = femaleBarGroup.selectAll(".proc-bar-f")
+            .data(femaleProcedures)
+            .enter()
+            .append("g")
+            .attr("class", "proc-bar")
+            .attr("transform", (_, j) => `translate(${width / 2 - 10}, ${j * barSpacing})`);
 
-    femaleBars.append("rect")
-        .attr("x", d => -xScale(d.percentage))
-        .attr("y", 0)
-        .attr("width", d => xScale(d.percentage))
-        .attr("height", barHeight)
-        .style("fill", color);
+        femaleBars.append("rect")
+            .attr("x", d => -xScale(d.percentage))
+            .attr("y", 0)
+            .attr("width", d => xScale(d.percentage))
+            .attr("height", barHeight)
+            .style("fill", color);
 
-    femaleBars.append("text")
-        .attr("x", d => -xScale(d.percentage) - 10)
-        .attr("y", barHeight / 2 + 5)
-        .attr("text-anchor", "end")
-        .style("font-size", "13px")
-        .text(p => p.procedure);
+        femaleBars.append("text")
+            .attr("x", d => -xScale(d.percentage) - 10)
+            .attr("y", barHeight / 2 + 5)
+            .attr("text-anchor", "end")
+            .style("font-size", "13px")
+            .text(p => p.procedure);
 
-    // Add male bars (right side)
-    const maleBars = maleBarGroup.selectAll(".proc-bar-m")
-        .data(maleProcedures)
-        .enter()
-        .append("g")
-        .attr("class", "proc-bar")
-        .attr("transform", (_, j) => `translate(${width / 2 + 10}, ${j * barSpacing})`);
+        // Add male bars (right side)
+        const maleBars = maleBarGroup.selectAll(".proc-bar-m")
+            .data(maleProcedures)
+            .enter()
+            .append("g")
+            .attr("class", "proc-bar")
+            .attr("transform", (_, j) => `translate(${width / 2 + 10}, ${j * barSpacing})`);
 
-    maleBars.append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", d => xScale(d.percentage))
-        .attr("height", barHeight)
-        .style("fill", color);
+        maleBars.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", d => xScale(d.percentage))
+            .attr("height", barHeight)
+            .style("fill", color);
 
-    maleBars.append("text")
-        .attr("x", d => xScale(d.percentage) + 10)
-        .attr("y", barHeight / 2 + 5)
-        .attr("text-anchor", "start")
-        .style("font-size", "13px")
-        .text(p => p.procedure);
+        maleBars.append("text")
+            .attr("x", d => xScale(d.percentage) + 10)
+            .attr("y", barHeight / 2 + 5)
+            .attr("text-anchor", "start")
+            .style("font-size", "13px")
+            .text(p => p.procedure);
 
-    // Health considerations for the shortest female bar
-    if (femaleProcedures.length >= 0) {
-        const bulletPointWidth = 300;
-        const bulletPointHeight = 220;
+        // Health considerations for the shortest female bar
+        if (femaleProcedures.length >= 0) {
+            const bulletPointWidth = 300;
+            const bulletPointHeight = 220;
 
-        const leftCheckmark = section.append("foreignObject")
-            .attr("x", Math.max(0, width / 2 - xScale(globalMaxPercentage * 1.2) - bulletPointWidth))  
-            .attr("y", dynamicStartY + shortestFemaleBarIndex * barSpacing + 30)  
-            .attr("width", bulletPointWidth)
-            .attr("height", bulletPointHeight)
-            .attr("class", "checkmark-content")
-            .append("xhtml:div")
-            .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2] || ""}</span></div>`);
-    }
+            const leftCheckmark = section.append("foreignObject")
+                .attr("x", Math.max(0, width / 2 - xScale(globalMaxPercentage * 1.2) - bulletPointWidth))  
+                .attr("y", dynamicStartY + shortestFemaleBarIndex * barSpacing + 30)  
+                .attr("width", bulletPointWidth)
+                .attr("height", bulletPointHeight)
+                .attr("class", "checkmark-content")
+                .append("xhtml:div")
+                .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2] || ""}</span></div>`);
+        }
 
-    // Health considerations for the shortest male bar
-    if (maleProcedures.length >= 0) {
-        const bulletPointWidth = 300;
-        const bulletPointHeight = 220;
+        // Health considerations for the shortest male bar
+        if (maleProcedures.length >= 0) {
+            const bulletPointWidth = 300;
+            const bulletPointHeight = 220;
 
-        const rightCheckmark = section.append("foreignObject")
-            .attr("x", Math.max(width - bulletPointWidth - 20, width / 2 + xScale(globalMaxPercentage * 1.2)) - 250)  
-            .attr("y", dynamicStartY + shortestMaleBarIndex * barSpacing - 40)  
-            .attr("width", bulletPointWidth)
-            .attr("height", bulletPointHeight)
-            .attr("class", "checkmark-content")
-            .append("xhtml:div")
-            .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2 + 1] || ""}</span></div>`);
-    }
-});
+            const rightCheckmark = section.append("foreignObject")
+                .attr("x", Math.max(width - bulletPointWidth - 20, width / 2 + xScale(globalMaxPercentage * 1.2)) - 250)  
+                .attr("y", dynamicStartY + shortestMaleBarIndex * barSpacing - 40)  
+                .attr("width", bulletPointWidth)
+                .attr("height", bulletPointHeight)
+                .attr("class", "checkmark-content")
+                .append("xhtml:div")
+                .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2 + 1] || ""}</span></div>`);
+        }
+    });
 }
 
