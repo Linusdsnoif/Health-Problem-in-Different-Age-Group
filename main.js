@@ -38,28 +38,29 @@ function handleScroll() {
     const timelineContainer = document.getElementById("timeline-container");
     if (!timelineContainer) return; // Avoid errors if the timeline isn't loaded
 
-    const timelineTop = timelineContainer.getBoundingClientRect().top;
-    const timelineBottom = timelineContainer.getBoundingClientRect().bottom;
+    const timelineRect = timelineContainer.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (timelineTop < windowHeight / 1.5 && timelineBottom > 0) {
+    const isTimelineVisible = timelineRect.top < windowHeight / 1.5 && timelineRect.bottom > windowHeight / 3;
+
+    if (isTimelineVisible) {
         d3.select(".left")
-            .style("display", "block") 
-            .transition().duration(50)
+            .style("display", "block")
+            .transition().duration(100)
             .style("opacity", "1");
 
         d3.select(".right")
-            .style("display", "block") 
-            .transition().duration(50)
+            .style("display", "block")
+            .transition().duration(100)
             .style("opacity", "1");
     } else {
         d3.select(".left")
-            .transition().duration(50)
+            .transition().duration(100)
             .style("opacity", "0")
             .on("end", function() { d3.select(this).style("display", "none"); });
 
         d3.select(".right")
-            .transition().duration(50)
+            .transition().duration(100)
             .style("opacity", "0")
             .on("end", function() { d3.select(this).style("display", "none"); });
     }
