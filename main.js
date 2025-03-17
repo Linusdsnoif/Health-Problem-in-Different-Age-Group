@@ -79,12 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function getPreventionSuggestions(ageGroupId, gender, procedure) {
     const suggestions = healthSuggestions[ageGroupId]?.[gender];
     if (suggestions) {
+        const preventionHeading = ageGroupId === "toddler" ? "Preventing Specific Issues" : `Preventing ${procedure} Issues`;
         return `
             <h3>General Health Recommendations:</h3>
             <ul>
                 ${suggestions.general.map(item => `<li>${item}</li>`).join('')}
             </ul>
-            <h3>Preventing ${procedure} Issues:</h3>
+            <h3>${preventionHeading}:</h3>
             <ul>
                 ${suggestions.specific.map(item => `<li>${item}</li>`).join('')}
             </ul>
@@ -97,6 +98,7 @@ function getPreventionSuggestions(ageGroupId, gender, procedure) {
     return "Regular health check-ups and a healthy lifestyle are recommended.";
 }
 
+// Function to handle user input and display results
 // Function to handle user input and display results
 function handleUserInput() {
     const ageInput = document.getElementById('age-input');
@@ -114,14 +116,23 @@ function handleUserInput() {
     // Find the age group
     const group = ageGroups.find(g => age >= g.start && age <= g.end);
     if (!group) {
-        resultDiv.innerHTML = "<p>No data available for this age group.</p>";
+        resultDiv.innerHTML = `
+            <p>No data available for this age group.</p>
+            <p>However, here are some general health recommendations:</p>
+            ${getPreventionSuggestions(group.id, gender, "General Health")}
+        `;
         return;
     }
 
     // Get the surgical data for the age group and gender
     const data = surgicalData[group.id][gender] || [];
     if (data.length === 0) {
-        resultDiv.innerHTML = `<p>No surgical data available for ${group.label} (${gender === 'f' ? 'Female' : 'Male'}).</p>`;
+        // Display a message indicating no surgical data is available
+        resultDiv.innerHTML = `
+            <p>No surgical data available for ${group.label} (${gender === 'f' ? 'Female' : 'Male'}).</p>
+            <p>However, here are some general health recommendations:</p>
+            ${getPreventionSuggestions(group.id, gender, "General Health")}
+        `;
         return;
     }
 
