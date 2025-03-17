@@ -75,6 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", handleScroll);
 });
 
+// Function to get prevention suggestions
+function getPreventionSuggestions(ageGroupId, gender) {
+    const suggestions = healthSuggestions[ageGroupId];
+    if (suggestions && suggestions[gender]) {
+        return suggestions[gender];
+    }
+    return "Regular health check-ups and a healthy lifestyle are recommended.";
+}
+
 // Function to handle user input and display results
 function handleUserInput() {
     const ageInput = document.getElementById('age-input');
@@ -99,7 +108,7 @@ function handleUserInput() {
     // Get the surgical data for the age group and gender
     const data = surgicalData[group.id][gender] || [];
     if (data.length === 0) {
-        resultDiv.innerHTML = "<p>No surgical data available for this age group and gender.</p>";
+        resultDiv.innerHTML = `<p>No surgical data available for ${group.label} (${gender === 'f' ? 'Female' : 'Male'}).</p>`;
         return;
     }
 
@@ -117,24 +126,8 @@ function handleUserInput() {
         <p><strong>Average Operation Time:</strong> ${mostCommonProcedure.avg_operation_time_seconds} hours</p>
         <p><strong>Average Hospital Stay:</strong> ${mostCommonProcedure.avg_hospital_stay_days} days</p>
         <h3>Prevention Suggestions:</h3>
-        <p>${getPreventionSuggestions(group.id, mostCommonProcedure.procedure)}</p>
+        <p>${getPreventionSuggestions(group.id, gender)}</p>
     `;
-}
-
-// Function to get prevention suggestions
-function getPreventionSuggestions(ageGroupId, procedure) {
-    const suggestions = {
-        "infant": "Ensure regular pediatric check-ups and vaccinations.",
-        "toddler": "Maintain a healthy diet and ensure childproofing at home.",
-        "child": "Encourage physical activity and a balanced diet.",
-        "teen": "Promote healthy lifestyle choices and regular exercise.",
-        "young-adult": "Focus on stress management and regular health screenings.",
-        "adult": "Maintain a healthy weight and avoid smoking.",
-        "senior": "Regular health check-ups and a balanced diet are crucial.",
-        "elderly": "Stay active and ensure regular medical consultations."
-    };
-
-    return suggestions[ageGroupId] || "Regular health check-ups and a healthy lifestyle are recommended.";
 }
 
 // Add event listener to the search button

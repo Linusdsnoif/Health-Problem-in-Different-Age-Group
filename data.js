@@ -968,3 +968,39 @@ const healthConsiderations = [
     "Male seniors account for the majority of respiratory (35%) and gastrointestinal (39.5%) procedures with concerning mortality for 'other' procedures (4.28%) and integumentary procedures (7.69%, requiring 68.5-day hospitalizations), while females show lower mortality but still undergo significant percentages of endocrine and lymphatic procedures.",
     "Elderly females face the highest mortality for 'other' procedures (8.33%) and integumentary system surgeries (8.33% with 55-day hospitalizations), while elderly males show more distributed mortality risks across cardiovascular (4.55%), 'other' (4.55%), and hepatobiliary (2.0%) procedures with longer hospital stays."
 ];
+
+// Health considerations by age group and gender
+const healthSuggestions = {
+    "infant": {
+        "f": "Female infants face higher surgical mortality risks. Ensure regular pediatric check-ups and vaccinations.",
+        "m": "Male infants show lower mortality for hepatobiliary procedures. Regular check-ups are still important."
+    },
+    "toddler": {
+        "f": "Female toddlers may require fewer surgeries. Maintain a healthy diet and ensure childproofing at home.",
+        "m": "Male toddlers often undergo genitourinary surgeries. Ensure proper hygiene and regular check-ups."
+    },
+    "child": {
+        "f": "Female children may have longer hospital stays for hepatobiliary procedures. Encourage a balanced diet and physical activity.",
+        "m": "Male children may require fewer surgeries. Focus on a healthy lifestyle and regular exercise."
+    },
+    "teen": {
+        "f": "Female teens account for neurological procedures with short hospital stays. Promote healthy lifestyle choices.",
+        "m": "Male teens undergo diverse procedures with longer operation times. Encourage regular exercise and stress management."
+    },
+    "young-adult": {
+        "f": "Female young adults undergo more reproductive procedures. Focus on stress management and regular health screenings.",
+        "m": "Male young adults dominate neurological procedures. Ensure regular check-ups and a healthy lifestyle."
+    },
+    "adult": {
+        "f": "Female adults undergo reproductive system surgeries with low mortality. Maintain a healthy weight and avoid smoking.",
+        "m": "Male adults face higher mortality for cardiovascular procedures. Regular health check-ups are crucial."
+    },
+    "senior": {
+        "f": "Female seniors show lower mortality but undergo significant endocrine and lymphatic procedures. Regular check-ups are important.",
+        "m": "Male seniors account for respiratory and gastrointestinal procedures. Focus on a balanced diet and regular exercise."
+    },
+    "elderly": {
+        "f": "Elderly females face high mortality for integumentary system surgeries. Stay active and ensure regular medical consultations.",
+        "m": "Elderly males show distributed mortality risks across cardiovascular and hepatobiliary procedures. Regular check-ups are essential."
+    }
+};
