@@ -1,3 +1,4 @@
+
 // Create the navigation bar
 function createNavigation() {
     const navContainer = d3.select("#nav-container");
@@ -110,7 +111,7 @@ function updateNavigation() {
     // Update progress bar
     const scrollPosition = window.scrollY;
     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercentage = (scrollPosition / documentHeight) * 100;
+    const progressPercentage = (scrollPosition / documentHeight) * 100;
     
     let activeButton = null;
     

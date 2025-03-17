@@ -214,6 +214,25 @@ function createTimeline() {
             return p.percentage < maleProcedures[shortestIdx].percentage ? idx : shortestIdx;
         }, 0);
 
+        function showTooltip(event, p, gender) {
+            tooltip.style("visibility", "visible")
+                .html(`
+                    <strong>${p.procedure}</strong><br>
+                    <b>Count:</b> ${p.count}<br>
+                    <b>Percentage:</b> ${p.percentage}%<br>
+                    <b>Sex:</b> ${gender}<br>
+                    <b>Mortality Rate:</b> ${p.mortality_rate}%<br>
+                    <b>Avg Operation Time:</b> ${p.avg_operation_time_seconds} hours<br>
+                    <b>Avg Hospital Stay:</b> ${p.avg_hospital_stay_days} days
+                `)
+                .style("top", `${event.pageY + 10}px`)
+                .style("left", `${event.pageX + 10}px`);
+        }
+
+        function hideTooltip() {
+            tooltip.style("visibility", "hidden");
+        }
+
         // Add female bars (left side)
         const femaleBars = femaleBarGroup.selectAll(".proc-bar-f")
             .data(femaleProcedures)
@@ -227,7 +246,10 @@ function createTimeline() {
             .attr("y", 0)
             .attr("width", d => xScale(d.percentage))
             .attr("height", barHeight)
-            .style("fill", color);
+            .style("fill", color)
+            .on("mouseover", (event, p) => showTooltip(event, p, "Female"))
+            .on("mousemove", (event) => tooltip.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`))
+            .on("mouseout", hideTooltip);
 
         femaleBars.append("text")
             .attr("x", d => -xScale(d.percentage) - 10)
@@ -249,7 +271,10 @@ function createTimeline() {
             .attr("y", 0)
             .attr("width", d => xScale(d.percentage))
             .attr("height", barHeight)
-            .style("fill", color);
+            .style("fill", color)
+            .on("mouseover", (event, p) => showTooltip(event, p, "Male"))
+            .on("mousemove", (event) => tooltip.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`))
+            .on("mouseout", hideTooltip);
 
         maleBars.append("text")
             .attr("x", d => xScale(d.percentage) + 10)
@@ -289,4 +314,3 @@ function createTimeline() {
         }
     });
 }
-
