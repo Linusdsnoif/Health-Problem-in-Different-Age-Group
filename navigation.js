@@ -111,8 +111,8 @@ function updateNavigation() {
     // Update progress bar
     const scrollPosition = window.scrollY;
     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progressPercentage = (scrollPosition / documentHeight) * 100;
     
+    let progressPercentage = (scrollPosition / documentHeight) * 100;
     let activeButton = null;
     
     // Check which section is in the viewport
