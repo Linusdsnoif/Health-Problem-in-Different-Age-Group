@@ -290,7 +290,7 @@ function createTimeline() {
 
             const leftCheckmark = section.append("foreignObject")
                 .attr("x", Math.max(0, width / 2 - xScale(globalMaxPercentage * 1.2) - bulletPointWidth))  
-                .attr("y", dynamicStartY + shortestFemaleBarIndex * barSpacing + 30)  
+                .attr("y", dynamicStartY + shortestFemaleBarIndex * barSpacing)  
                 .attr("width", bulletPointWidth)
                 .attr("height", bulletPointHeight)
                 .attr("class", "checkmark-content")
