@@ -102,7 +102,7 @@ function createTimeline() {
             .style("pointer-events", "none");
     }
 
-    const margin = { top: 40, right: 40, bottom: 100, left: 40};
+    const margin = { top: 40, right: 40, bottom: 125, left: 40};
     const width = container.node().clientWidth - margin.left - margin.right;
     const barSpacing = 40; // Space per bar
     const barHeight = 25;
