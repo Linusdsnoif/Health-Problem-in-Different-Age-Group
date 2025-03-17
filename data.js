@@ -975,6 +975,7 @@ const healthConsiderations = [
     "Key Consideration: Male seniors account for the majority of respiratory (35%) and gastrointestinal (39.5%) procedures with concerning mortality for 'other' procedures (4.28%) and integumentary procedures (7.69%, requiring 68.5-day hospitalizations)",
     "Key Consideration: Elderly females face the highest mortality for 'other' procedures (8.33%) and integumentary system surgeries (8.33% with 55-day hospitalizations).",
     "Key Consideration: Elderly males show more distributed mortality risks across cardiovascular (4.55%), 'other' (4.55%), and hepatobiliary (2.0%) procedures with longer hospital stays."
+    
 ];
 
 

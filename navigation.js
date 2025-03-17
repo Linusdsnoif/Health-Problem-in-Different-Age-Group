@@ -1,5 +1,3 @@
-
-
 // Create the navigation bar
 function createNavigation() {
     const navContainer = d3.select("#nav-container");
