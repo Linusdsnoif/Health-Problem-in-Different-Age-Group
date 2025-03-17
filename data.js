@@ -978,39 +978,177 @@ const healthConsiderations = [
     
 ];
 
-
 // Health considerations by age group and gender
 const healthSuggestions = {
     "infant": {
-        "f": "Female infants face higher surgical mortality risks. Ensure regular pediatric check-ups and vaccinations.",
-        "m": "Male infants show lower mortality for hepatobiliary procedures. Regular check-ups are still important."
+        "f": {
+            "general": ["Ensure regular pediatric check-ups and vaccinations.", "Ensure proper nutrition and hydration.", "Maintain a clean and safe environment to prevent infections.", "Breastfeeding (if possible) to boost immunity.", "Monitor developmental milestones and seek early intervention if needed."],
+            "specific": ["Focus on general infant care and prevention of common illnesses."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Infant Health", "url": "https://www.cdc.gov/parents/infants/healthy-children.html" },
+                { "name": "National Institute of Child Health and Human Development: Infant Care and Infant Health", "url": "https://www.nichd.nih.gov/health/topics/infantcare" },
+                { "name": "HealthyChildren.org: Baby", "url": "https://www.healthychildren.org/english/ages-stages/baby/Pages/default.aspx" }
+            ]
+        },
+        "m": {
+            "general": ["Ensure regular pediatric check-ups and vaccinations.", "Ensure proper nutrition and hydration.", "Maintain a clean and safe environment to prevent infections.", "Breastfeeding (if possible) to boost immunity.", "Monitor developmental milestones and seek early intervention if needed."],
+            "specific": ["Monitor for jaundice and other signs of liver or pancreatic issues.", "Avoid exposure to toxins that could affect the liver."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Infant Health", "url": "https://www.cdc.gov/parents/infants/healthy-children.html" },
+                { "name": "National Institute of Child Health and Human Development: Infant Care and Infant Health", "url": "https://www.nichd.nih.gov/health/topics/infantcare" },
+                { "name": "HealthyChildren.org: Baby", "url": "https://www.healthychildren.org/english/ages-stages/baby/Pages/default.aspx" },
+                { "name": "Mayo Clinic: Hepatobiliary and Pancreas Surgery", "url": "https://www.mayoclinic.org/departments-centers/hepatobiliary-pancreas-surgery/sections/conditions-treated/orc-20530486" },
+                { "name": "American Liver Foundation: Pediatric Liver Diisease", "url": "https://liverfoundation.org/liver-diseases/pediatric-liver-information-center/pediatric-liver-disease/?gad_source=1&gclid=EAIaIQobChMI_aKd152QjAMVZCZECB3aLTGbEAAYASAAEgKeTPD_BwE" }
+            ]
+        }
     },
     "toddler": {
-        "f": "Female toddlers may require fewer surgeries. Maintain a healthy diet and ensure childproofing at home.",
-        "m": "Male toddlers often undergo genitourinary surgeries. Ensure proper hygiene and regular check-ups."
+        "f": {
+            "general": ["Maintain a healthy diet and ensure childproofing at home.", "Regular check-ups and vaccinations.", "Encourage physical activity and social interaction."],
+            "specific": ["Focus on general toddler health and safety."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Toddler Health", "url": "https://www.cdc.gov/parents/infants/healthy-children.html" },
+                { "name": "HealthyChildren.org: Toddler", "url": "https://www.healthychildren.org/English/ages-stages/toddler/Pages/default.aspx" },
+                { "name": "Medline Plus: Toddler Health", "url": "https://medlineplus.gov/toddlerhealth.html" }
+            ]
+        },
+        "m": {
+            "general": ["Maintain a healthy diet and ensure childproofing at home.", "Regular check-ups and vaccinations.", "Encourage physical activity and social interaction."],
+            "specific": ["Monitor for signs of urinary tract infections or congenital issues.", "Encourage proper hydration and timely bathroom use."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Toddler Health", "url": "https://www.cdc.gov/parents/infants/healthy-children.html" },
+                { "name": "HealthyChildren.org: Toddler", "url": "https://www.healthychildren.org/English/ages-stages/toddler/Pages/default.aspx" },
+                { "name": "Medline Plus: Toddler Health", "url": "https://medlineplus.gov/toddlerhealth.html" },
+                { "name": "Centers for Disease Control and Prevention: Urinary Tract Infection Basics", "url": "https://www.cdc.gov/uti/about/index.html" },
+                { "name": "HealthyChildren.org: Prevent Urinary Tract Infections in Children", "url": "https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/Prevent-Urinary-Tract-Infections-in-Children.aspx" },            
+            ]
+        }
     },
     "child": {
-        "f": "Female children may have longer hospital stays for hepatobiliary procedures. Encourage a balanced diet and physical activity.",
-        "m": "Male children may require fewer surgeries. Focus on a healthy lifestyle and regular exercise."
+        "f": {
+            "general": ["Encourage physical activity and a balanced diet.", "Regular check-ups to monitor growth and development.", "Promote good sleep habits and mental well-being.", "Limit screentime."],
+            "specific": ["Monitor for congenital heart defects or other cardiovascular issues.", "Promote a heart-healthy lifestyle from an early age."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Information About Young Children", "url": "https://www.cdc.gov/parents/children/index.html" },
+                { "name": "American Heart Association: Cardiovascular Health in Childhood", "url": "https://www.ahajournals.org/doi/10.1161/01.cir.0000019555.61092.9e" },
+                { "name": "Stanford Medicine Children's Health: Prevention of Heart Disease Starts in Childhood", "url": "https://www.stanfordchildrens.org/en/topic/default?id=prevention-of-heart-disease-starts-in-childhood-1-4508" }
+            ]
+        },
+        "m": {
+            "general": ["Encourage physical activity and a balanced diet.", "Regular check-ups to monitor growth and development.", "Promote good sleep habits and mental well-being.", "Limit screentime."],
+            "specific": ["Monitor for signs of urinary tract infections or congenital issues.", "Encourage proper hydration and timely bathroom use."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Information About Young Children", "url": "https://www.cdc.gov/parents/children/index.html" },
+                { "name": "Centers for Disease Control and Prevention: Urinary Tract Infection Basics", "url": "https://www.cdc.gov/uti/about/index.html" },
+                { "name": "HealthyChildren.org: Prevent Urinary Tract Infections in Children", "url": "https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/Prevent-Urinary-Tract-Infections-in-Children.aspx" },
+            ]
+        }
     },
     "teen": {
-        "f": "Female teens account for neurological procedures with short hospital stays. Promote healthy lifestyle choices.",
-        "m": "Male teens undergo diverse procedures with longer operation times. Encourage regular exercise and stress management."
+        "f": {
+            "general": ["Promote healthy lifestyle choices and regular exercise.", "Ensure proper nutrition and mental health support.", "Encourage open communication about health concerns."],
+            "specific": ["Monitor for signs of neurological issues such as headaches, seizures, or developmental delays.", "Encourage stress management and adequate sleep."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Information about Teens", "url": "https://www.cdc.gov/parents/teens/index.html" },
+                { "name": "HealthyChildren.org: Teen", "url": "https://www.healthychildren.org/English/ages-stages/teen/Pages/default.aspx" },
+                { "name": "Mayo Clinic: Child and Adolescent Neurology", "url": "https://www.mayoclinic.org/departments-centers/division-child-adolescent-neurology/overview/ovc-20444132" },
+                { "name": "Nemours KidsHealth: Brain & Nervous System", "url": "https://kidshealth.org/en/teens/diseases-conditions/brain-nervous/" }
+            ]
+        },
+        "m": {
+            "general": ["Encourage regular exercise and a heart-healthy diet.", "Regular check-ups to monitor growth and development.", "Promote mental health awareness and stress management."],
+            "specific": ["Monitor for signs of high blood pressure or congenital heart issues.", "Promote a heart-healthy lifestyle from an early age."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Information about Teens", "url": "https://www.cdc.gov/parents/teens/index.html" },
+                { "name": "HealthyChildren.org: Teen", "url": "https://www.healthychildren.org/English/ages-stages/teen/Pages/default.aspx" },
+                { "name": "American Heart Association: Heart Failure in Children and Adolescents", "url": "https://www.heart.org/en/health-topics/heart-failure/what-is-heart-failure/heart-failure-in-children-and-adolescents" },
+                { "name": "Children’s Healthcare of Atlanta: Heart Disease Affects Children and Teens, Too", "url": "https://www.choa.org/parent-resources/heart/signs-of-heart-problems-in-children-and-teens" }
+            ]
+        }
     },
     "young-adult": {
-        "f": "Female young adults undergo more reproductive procedures. Focus on stress management and regular health screenings.",
-        "m": "Male young adults dominate neurological procedures. Ensure regular check-ups and a healthy lifestyle."
+        "f": {
+            "general": ["Focus on reproductive health and regular screenings.", "Promote stress management and a healthy lifestyle.", "Encourage regular physical activity and a balanced diet."],
+            "specific": ["Regular gynecological check-ups and screenings (e.g., Pap smears).", "Practice safe sex to prevent sexually transmitted infections (STIs)."],
+            "links": [
+                { "name": "World Health Organization: Adolescent and young adult health", "url": "https://www.who.int/news-room/fact-sheets/detail/adolescents-health-risks-and-solutions" },
+                { "name": "Centers for Disease Control and Prevention: Common Reproductive Health Concerns for Women", "url": "https://www.cdc.gov/reproductive-health/women-health/common-concerns.html" },
+                { "name": "National Institute of Environmental Health Sciences: Reproductive Health", "url": "https://www.niehs.nih.gov/health/topics/conditions/repro-health" }
+            ]
+        },
+        "m": {
+            "general": ["Encourage regular exercise and mental health support.", "Ensure proper nutrition and adequate sleep.", "Promote regular health check-ups and screenings."],
+            "specific": ["Monitor for signs of neurological issues such as headaches, seizures, or developmental delays.", "Encourage stress management and mental health check-ups."],
+            "links": [
+                { "name": "World Health Organization: Adolescent and young adult health", "url": "https://www.who.int/news-room/fact-sheets/detail/adolescents-health-risks-and-solutions" },
+                { "name": "Cleveland Clinic: Nervous System", "url": "https://my.clevelandclinic.org/health/body/21202-nervous-system" },
+                { "name": "Neurological & Spine Institute: Preventing Neurological Problems", "url": "https://neurologicalinstitute.com/educational_resources/e_prevent.html" },
+            ]
+        }
     },
     "adult": {
-        "f": "Female adults undergo reproductive system surgeries with low mortality. Maintain a healthy weight and avoid smoking.",
-        "m": "Male adults face higher mortality for cardiovascular procedures. Regular health check-ups are crucial."
+        "f": {
+            "general": ["Maintain a healthy weight and avoid smoking.", "Promote a balanced diet and regular physical activity."],
+            "specific": ["Regular gynecological check-ups and screenings (e.g., Pap smears).", "Practice safe sex to prevent sexually transmitted infections (STIs)."],
+            "links": [
+                { "name": "Centers for Disease Control and Prevention: Women's Health", "url": "https://www.cdc.gov/womens-health/index.html" },
+                { "name": "Centers for Disease Control and Prevention: Women's Reproductive Health", "url": "https://www.cdc.gov/reproductive-health/women-health/index.html" },
+                { "name": "Centers for Disease Control and Prevention: Common Reproductive Health Concerns for Women", "url": "https://www.cdc.gov/reproductive-health/women-health/common-concerns.html" }
+            ]
+        },
+        "m": {
+            "general": ["Maintain a healthy weight and avoid smoking.", "Promote a balanced diet and regular physical activity."],
+            "specific": ["Use sunscreen and avoid excessive sun exposure. Monitor for skin changes or unusual moles."],
+            "links": [
+                { "name": "Hamilton Health Center", "url": "Top Men's Health Issues - Most Common Men Diseases" },
+                { "name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases: Skin Diseases", "url": "https://www.niams.nih.gov/health-topics/skin-diseases" },
+                { "name": "Cleveland Clinic: Skin Diseases", "url": "https://my.clevelandclinic.org/health/diseases/21573-skin-diseases" },
+                { "name": "Centers for Disease Control and Prevention: Reducing Risk for Skin Cancer", "url": "https://www.cdc.gov/skin-cancer/prevention/index.html" }
+            ]
+        }
     },
     "senior": {
-        "f": "Female seniors show lower mortality but undergo significant endocrine and lymphatic procedures. Regular check-ups are important.",
-        "m": "Male seniors account for respiratory and gastrointestinal procedures. Focus on a balanced diet and regular exercise."
+        "f": {
+            "general": ["Regular health check-ups and screenings.", "Maintain a balanced diet and stay active.", "Promote mental health and social engagement."],
+            "specific": ["Regular gynecological check-ups and screenings.", "Monitor for signs of menopause-related issues."],
+            "links": [
+                { "name": "National Institute of Aging: Health Topics A-Z", "url": "https://www.nia.nih.gov/health" },
+                { "name": "Centers for Disease Control and Prevention: Women's Reproductive Health", "url": "https://www.cdc.gov/reproductive-health/women-health/index.html" },
+                { "name": "Medline Plus: Aging changes in the female reproductive system", "url": "https://medlineplus.gov/ency/article/004016.htm" }
+            ]
+        },
+        "m": {
+            "general": ["Regular health check-ups and screenings.", "Maintain a balanced diet and stay active.", "Promote mental health and social engagement."],
+            "specific": ["Monitor for signs of gastrointestinal issues (e.g., acid reflux, constipation).", "Promote a high-fiber diet and hydration."],
+            "links": [
+                { "name": "National Institute of Aging: Health Topics A-Z", "url": "https://www.nia.nih.gov/health" },
+                { "name": "Cleveland Clinic: Gastrointestinal Diseases", "url": "https://my.clevelandclinic.org/health/articles/7040-gastrointestinal-diseases" },
+                { "name": "American College of Gastroenterology: Digestive Health Tips", "url": "https://gi.org/topics/digestive-health-tips/" }
+            ]
+        }
     },
     "elderly": {
-        "f": "Elderly females face high mortality for integumentary system surgeries. Stay active and ensure regular medical consultations.",
-        "m": "Elderly males show distributed mortality risks across cardiovascular and hepatobiliary procedures. Regular check-ups are essential."
+        "f": {
+            "general": ["Stay active and ensure regular medical consultations.", "Maintain a balanced diet and hydration.", "Promote mental health and social engagement"],
+            "specific": ["Use sunscreen and avoid excessive sun exposure.", "Monitor for skin changes or unusual moles."],
+            "links": [
+                { "name": "National Institute of Aging: Health Topics A-Z", "url": "https://www.nia.nih.gov/health" },
+                { "name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases: Skin Diseases", "url": "https://www.niams.nih.gov/health-topics/skin-diseases" },
+                { "name": "Cleveland Clinic: Skin Diseases", "url": "https://my.clevelandclinic.org/health/diseases/21573-skin-diseases" },
+                { "name": "Centers for Disease Control and Prevention: Reducing Risk for Skin Cancer", "url": "https://www.cdc.gov/skin-cancer/prevention/index.html" },
+                { "name": "American Academy of Dermatology: How to Care for Your Skin in Your 60s and 70s", "url": "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-in-your-60s-and-70s" }
+            ]
+        },
+        "m": {
+            "general": ["Stay active and ensure regular medical consultations.", "Maintain a balanced diet and hydration.", "Promote mental health and social engagement"],
+            "specific": ["Use sunscreen and avoid excessive sun exposure.", "Monitor for skin changes or unusual moles."],
+            "links": [
+                { "name": "National Institute of Aging: Health Topics A-Z", "url": "https://www.nia.nih.gov/health" },
+                { "name": "National Institute of Arthritis and Musculoskeletal and Skin Diseases: Skin Diseases", "url": "https://www.niams.nih.gov/health-topics/skin-diseases" },
+                { "name": "Cleveland Clinic: Skin Diseases", "url": "https://my.clevelandclinic.org/health/diseases/21573-skin-diseases" },
+                { "name": "Centers for Disease Control and Prevention: Reducing Risk for Skin Cancer", "url": "https://www.cdc.gov/skin-cancer/prevention/index.html" },
+                { "name": "American Academy of Dermatology: How to Care for Your Skin in Your 60s and 70s", "url": "https://www.aad.org/public/everyday-care/skin-care-basics/care/skin-care-in-your-60s-and-70s" }
+            ]
+        }
     }
 };

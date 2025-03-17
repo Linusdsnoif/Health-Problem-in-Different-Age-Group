@@ -76,10 +76,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Function to get prevention suggestions
-function getPreventionSuggestions(ageGroupId, gender) {
-    const suggestions = healthSuggestions[ageGroupId];
-    if (suggestions && suggestions[gender]) {
-        return suggestions[gender];
+function getPreventionSuggestions(ageGroupId, gender, procedure) {
+    const suggestions = healthSuggestions[ageGroupId]?.[gender];
+    if (suggestions) {
+        return `
+            <h3>General Health Recommendations:</h3>
+            <ul>
+                ${suggestions.general.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            <h3>Preventing ${procedure} Issues:</h3>
+            <ul>
+                ${suggestions.specific.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            <h3>Links:</h3>
+            <ol>
+                ${suggestions.links.map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`).join('')}
+            </ol>
+        `;
     }
     return "Regular health check-ups and a healthy lifestyle are recommended.";
 }
@@ -125,8 +138,7 @@ function handleUserInput() {
         <p><strong>Mortality Rate:</strong> ${mostCommonProcedure.mortality_rate}%</p>
         <p><strong>Average Operation Time:</strong> ${mostCommonProcedure.avg_operation_time_seconds} hours</p>
         <p><strong>Average Hospital Stay:</strong> ${mostCommonProcedure.avg_hospital_stay_days} days</p>
-        <h3>Prevention Suggestions:</h3>
-        <p>${getPreventionSuggestions(group.id, gender)}</p>
+        ${getPreventionSuggestions(group.id, gender, mostCommonProcedure.procedure)}
     `;
 }
 
