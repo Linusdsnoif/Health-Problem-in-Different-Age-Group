@@ -242,9 +242,9 @@ function createTimeline() {
             .attr("transform", (_, j) => `translate(${width / 2 - 10}, ${j * barSpacing})`);
 
         femaleBars.append("rect")
-            .attr("x", d => -xScale(d.percentage))
+            .attr("x", d => -xScale(d.percentage + 1)) // Add a constant to the percentage (e.g., 10)
             .attr("y", 0)
-            .attr("width", d => xScale(d.percentage))
+            .attr("width", d => xScale(d.percentage + 1)) // Add a constant to the percentage (e.g., 10)
             .attr("height", barHeight)
             .style("fill", color)
             .on("mouseover", (event, p) => showTooltip(event, p, "Female"))
@@ -252,7 +252,7 @@ function createTimeline() {
             .on("mouseout", hideTooltip);
 
         femaleBars.append("text")
-            .attr("x", d => -xScale(d.percentage) - 10)
+            .attr("x", d => -xScale(d.percentage + 2)) // Adjust the x position to account for the longer bars
             .attr("y", barHeight / 2 + 5)
             .attr("text-anchor", "end")
             .style("font-size", "13px")
@@ -269,7 +269,7 @@ function createTimeline() {
         maleBars.append("rect")
             .attr("x", 0)
             .attr("y", 0)
-            .attr("width", d => xScale(d.percentage))
+            .attr("width", d => xScale(d.percentage + 1)) // Add a constant to the percentage (e.g., 10)
             .attr("height", barHeight)
             .style("fill", color)
             .on("mouseover", (event, p) => showTooltip(event, p, "Male"))
@@ -277,7 +277,7 @@ function createTimeline() {
             .on("mouseout", hideTooltip);
 
         maleBars.append("text")
-            .attr("x", d => xScale(d.percentage) + 10)
+            .attr("x", d => xScale(d.percentage + 1) + 8) // Adjust the x position to account for the longer bars
             .attr("y", barHeight / 2 + 5)
             .attr("text-anchor", "start")
             .style("font-size", "13px")
