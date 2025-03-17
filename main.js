@@ -117,7 +117,7 @@ function handleUserInput() {
     const group = ageGroups.find(g => age >= g.start && age <= g.end);
     if (!group) {
         resultDiv.innerHTML = `
-            <p>No data available for this age group.</p>
+            <h3>No data available for this age group.</h3>
             <p>However, here are some general health recommendations:</p>
             ${getPreventionSuggestions(group.id, gender, "General Health")}
         `;
@@ -129,7 +129,7 @@ function handleUserInput() {
     if (data.length === 0) {
         // Display a message indicating no surgical data is available
         resultDiv.innerHTML = `
-            <p>No surgical data available for ${group.label} (${gender === 'f' ? 'Female' : 'Male'}).</p>
+            <h3>No surgical data available for ${group.label} (${gender === 'f' ? 'Female' : 'Male'}).</h3>
             <p>However, here are some general health recommendations:</p>
             ${getPreventionSuggestions(group.id, gender, "General Health")}
         `;
