@@ -108,20 +108,20 @@ function createTimeline() {
         .text(d => `${d.label} (${d.ageRange})`);
 
     // Create procedure bars for each section
-    sections.each(function(d) {
+    sections.each(function(d, i) {
         const section = d3.select(this);
         const data = surgicalData[d.id] || {};
         const femaleProcedures = [...(data.f || [])].sort((a, b) => b.percentage - a.percentage);
         const maleProcedures = [...(data.m || [])].sort((a, b) => b.percentage - a.percentage);
         const color = d.color; // Get color from ageGroups
-
+    
         const maxBars = Math.max(femaleProcedures.length, maleProcedures.length);
         const dynamicStartY = maxBars > 0 ? 80 : 40; // Adjust for empty sections
-
+    
         // Create groups for female and male bars
         const femaleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
         const maleBarGroup = section.append("g").attr("transform", `translate(0, ${dynamicStartY})`);
-
+    
         function showTooltip(event, p, gender) {
             tooltip.style("visibility", "visible")
                 .html(`
@@ -136,11 +136,11 @@ function createTimeline() {
                 .style("top", `${event.pageY + 10}px`)
                 .style("left", `${event.pageX + 10}px`);
         }
-
+    
         function hideTooltip() {
             tooltip.style("visibility", "hidden");
         }
-
+    
         // Add female bars (left side)
         const femaleBars = femaleBarGroup.selectAll(".proc-bar-f")
             .data(femaleProcedures)
@@ -148,7 +148,7 @@ function createTimeline() {
             .append("g")
             .attr("class", "proc-bar")
             .attr("transform", (_, j) => `translate(${width / 2 - 10}, ${j * barSpacing})`);
-
+    
         femaleBars.append("rect")
             .attr("x", d => -xScale(d.percentage))
             .attr("y", 0)
@@ -158,14 +158,14 @@ function createTimeline() {
             .on("mouseover", (event, p) => showTooltip(event, p, "Female"))
             .on("mousemove", (event) => tooltip.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`))
             .on("mouseout", hideTooltip);
-
+    
         femaleBars.append("text")
             .attr("x", d => -xScale(d.percentage) - 10)
             .attr("y", barHeight / 2 + 5)
             .attr("text-anchor", "end")
             .style("font-size", "13px")
             .text(p => p.procedure);
-
+    
         // Add male bars (right side)
         const maleBars = maleBarGroup.selectAll(".proc-bar-m")
             .data(maleProcedures)
@@ -173,7 +173,7 @@ function createTimeline() {
             .append("g")
             .attr("class", "proc-bar")
             .attr("transform", (_, j) => `translate(${width / 2 + 10}, ${j * barSpacing})`);
-
+    
         maleBars.append("rect")
             .attr("x", 0)
             .attr("y", 0)
@@ -183,28 +183,36 @@ function createTimeline() {
             .on("mouseover", (event, p) => showTooltip(event, p, "Male"))
             .on("mousemove", (event) => tooltip.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`))
             .on("mouseout", hideTooltip);
-
+    
         maleBars.append("text")
             .attr("x", d => xScale(d.percentage) + 10)
             .attr("y", barHeight / 2 + 5)
             .attr("text-anchor", "start")
             .style("font-size", "13px")
             .text(p => p.procedure);
-    });
+    
+        const bulletPointWidth = 300;  // Adjust the width for the bullet points
+        const bulletPointHeight = 220;  // Adjust the height for the bullet points
+        
+        // Left-side bullet point (Female Side)
+        const leftCheckmark = section.append("foreignObject")
+            .attr("x", Math.max(0, width / 2 - xScale(globalMaxPercentage * 1.2) - bulletPointWidth))  // Position on the left side
+            .attr("y", dynamicStartY + 30)  // Positioning it below the bars
+            .attr("width", bulletPointWidth)
+            .attr("height", bulletPointHeight)
+            .attr("class", "checkmark-content")
+            .append("xhtml:div")
+            .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2] || ""}</span></div>`);  // Add checkmark and health consideration
 
-    // Add health consideration sections
-    ageGroups.forEach((group, i) => {
-        // Add container div for each section
-        const infoDiv = container.append("div")
-            .attr("class", "info-div")
-            .style("background-color", `${group.color}20`)
-            .style("border-left-color", group.color);
-        
-        // Add health considerations
-        infoDiv.append("h3")
-            .text("Key Considerations");
-        
-        infoDiv.append("p")
-            .html(healthConsiderations[i]);
+        // Right-side checkmark (Male Side)
+        const rightCheckmark = section.append("foreignObject")
+            .attr("x", Math.max(width - bulletPointWidth - 20, width / 2 + xScale(globalMaxPercentage * 1.2)) - 80)  // Position on the right side
+            .attr("y", dynamicStartY + 30)  // Positioning it below the bars
+            .attr("width", bulletPointWidth)
+            .attr("height", bulletPointHeight)
+            .attr("class", "checkmark-content")
+            .append("xhtml:div")
+            .html(`<div><span class="checkmark">&#10004;</span><span class="text">${healthConsiderations[i * 2 + 1] || ""}</span></div>`);  // Add checkmark and health consideration
     });
 }
+

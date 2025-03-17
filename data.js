@@ -959,12 +959,20 @@ const surgicalData = {
 
 // Health considerations by age group
 const healthConsiderations = [
-    "Female infants face dramatically higher surgical mortality risks with 100% mortality for cardiovascular procedures, while male infants show 0% mortality for hepatobiliary procedures despite similar operation times, suggesting significant gender-based outcome differences in early-life surgeries. Note: This age group contained a low number of data points.",
-    "Data shows only male toddlers undergoing surgical procedures with zero mortality, primarily for genitourinary issues requiring 40-day hospital stays, indicating possible gender-specific surgical needs at this developmental stage. Note: This age group contained a low number of data points.",
-    "Female children undergo very long hospitalizations (up to 141 days for hepatobiliary procedures) compared to males (up to 34 days), despite both sexes experiencing no mortality, suggesting potential differences in treatment complexity or mechanisms of recovery. Note: This age group contained a low number of data points.",
-    "Female teens account for all neurological system procedures (22% of total) with remarkably short hospital stays (1 day), while male teens undergo a more diverse range of procedures with longer operation times but still zero mortality across all surgery types. Note: This age group contained a low number of data points.",
-    "Male young adults dominate neurological procedures (55.6% of all cases) with very brief hospital stays (0.8 days), while females undergo more reproductive procedures with higher mortality rates (1.35%); males show elevated mortality (3.7%) for genitourinary procedures.",
-    "Female adults undergo over half of all reproductive system surgeries with relatively low mortality (0.64%), while male adults face significantly higher mortality for cardiovascular procedures (6.06% vs. 0% in females) and require much longer hospital stays for musculoskeletal procedures (83 days vs. 48 days).",
-    "Male seniors account for the majority of respiratory (35%) and gastrointestinal (39.5%) procedures with concerning mortality for 'other' procedures (4.28%) and integumentary procedures (7.69%, requiring 68.5-day hospitalizations), while females show lower mortality but still undergo significant percentages of endocrine and lymphatic procedures.",
-    "Elderly females face the highest mortality for 'other' procedures (8.33%) and integumentary system surgeries (8.33% with 55-day hospitalizations), while elderly males show more distributed mortality risks across cardiovascular (4.55%), 'other' (4.55%), and hepatobiliary (2.0%) procedures with longer hospital stays."
+    "Key Consideration: Female infants face dramatically higher surgical mortality risks with 100% mortality for cardiovascular procedures. Note: This age group contained a low number of data points.", 
+    "Key Consideration: Male infants show 0% mortality for hepatobiliary procedures despite similar operation times. Note: This age group contained a low number of data points.",
+    "Key Consideration: Female toddler, due to the limited data, there are no information about their surgeries",
+    "Key Consideration: Male toddlers undergoing surgical procedures with zero mortality, primarily for genitourinary issues requiring 40-day hospital stays. Note: This age group contained a low number of data points.",
+    "Key Consideration: Female children undergo very long hospitalizations (up to 141 days for hepatobiliary procedures) Note: This age group contained a low number of data points.",
+    "Key Consideration: Males children undergo relatively short hospitalizations(up to 34 days) compared to female children, despite both sexes experiencing no mortality. Note: This age group contained a low number of data points.",
+    "Key Consideration: Female teens account for all neurological system procedures (22% of total) with remarkably short hospital stays (1 day). Note: This age group contained a low number of data points.", 
+    "Key Consideration: Male teens undergo a more diverse range of procedures with longer operation times but still zero mortality across all surgery types. Note: This age group contained a low number of data points.",
+    "Key Consideration: Female young adults undergo more reproductive procedures with higher mortality rates (1.35%) and moderate hopital stay (8.81 days).",
+    "Key Consideration: Male young adults dominate neurological procedures (55.6% of all cases) with very brief hospital stays (0.8 days) and males young adults show elevated mortality (3.7%) for genitourinary procedures.",
+    "Key Consideration: Female adults undergo over half of all reproductive system surgeries with relatively low mortality (0.64%).", 
+    "Key Consideration: Male adults face significantly higher mortality for cardiovascular procedures (6.06% vs. 0% in females) and require much longer hospital stays for musculoskeletal procedures (83 days vs. 48 days).",
+    "Key Consideration: Females show lower mortality but still undergo significant percentages of endocrine and lymphatic procedures.",
+    "Key Consideration: Male seniors account for the majority of respiratory (35%) and gastrointestinal (39.5%) procedures with concerning mortality for 'other' procedures (4.28%) and integumentary procedures (7.69%, requiring 68.5-day hospitalizations)",
+    "Key Consideration: Elderly females face the highest mortality for 'other' procedures (8.33%) and integumentary system surgeries (8.33% with 55-day hospitalizations).",
+    "Key Consideration: Elderly males show more distributed mortality risks across cardiovascular (4.55%), 'other' (4.55%), and hepatobiliary (2.0%) procedures with longer hospital stays."
 ];

@@ -15,7 +15,7 @@ function createNavigation() {
     navBar.append("h1")
         .attr("class", "title")
         .text("Surgical Journey Through Life");
-    
+   
     // Search box
     const searchContainer = navBar.append("div")
         .attr("class", "search-container");
