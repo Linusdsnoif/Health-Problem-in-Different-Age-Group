@@ -1,8 +1,12 @@
+
 // Initialize the visualization
 function initVisualization() {
+    // Create introduction
+    createIntroduction();
+
     // Create navigation
     createNavigation();
-    
+
     // Create timeline
     createTimeline();
     
@@ -11,6 +15,7 @@ function initVisualization() {
     
     // Handle window resize
     window.addEventListener('resize', debounce(() => {
+        createIntroduction();
         createNavigation();
         createTimeline();
     }, 250));
@@ -28,6 +33,47 @@ function debounce(func, wait) {
         }, wait);
     };
 }
+
+function handleScroll() {
+    const timelineContainer = document.getElementById("timeline-container");
+    if (!timelineContainer) return; // Avoid errors if the timeline isn't loaded
+
+    const timelineTop = timelineContainer.getBoundingClientRect().top;
+    const timelineBottom = timelineContainer.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    if (timelineTop < windowHeight / 1.5 && timelineBottom > 0) {
+        d3.select(".left")
+            .style("display", "block") 
+            .transition().duration(50)
+            .style("opacity", "1");
+
+        d3.select(".right")
+            .style("display", "block") 
+            .transition().duration(50)
+            .style("opacity", "1");
+    } else {
+        d3.select(".left")
+            .transition().duration(50)
+            .style("opacity", "0")
+            .on("end", function() { d3.select(this).style("display", "none"); });
+
+        d3.select(".right")
+            .transition().duration(50)
+            .style("opacity", "0")
+            .on("end", function() { d3.select(this).style("display", "none"); });
+    }
+}
+
+function hideLabelsOnLoad() {
+    d3.select(".left").style("display", "none").style("opacity", "0");
+    d3.select(".right").style("display", "none").style("opacity", "0");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    hideLabelsOnLoad();
+    window.addEventListener("scroll", handleScroll);
+});
 
 // Function to handle user input and display results
 function handleUserInput() {

@@ -1,3 +1,86 @@
+// Function to create an introduction before the timeline
+function createIntroduction() {
+    const introContainer = d3.select("#intro-container");
+
+    // Clear previous content
+    introContainer.html("");
+
+    // Create an intro section
+    const introSection = introContainer.append("div")
+        .attr("class", "intro-section")
+        .style("text-align", "center")
+        .style("padding", "40px")
+        .style("background", "#f4f4f4")
+        .style("border-bottom", "2px solid #ccc");
+
+    // Add title
+    introSection.append("h1")
+        .text("The Surgical Journey Through Life")
+        .style("font-size", "32px")
+        .style("color", "#333");
+
+    // Add subtitle
+    introSection.append("h2")
+        .text("A Data-Driven Exploration of Surgeries Across Different Ages")
+        .style("font-size", "20px")
+        .style("color", "#555")
+        .style("margin-bottom", "20px");
+
+    // Add introduction text
+    introSection.append("p")
+        .text("This interactive timeline visualizes the most common surgical procedures by bodily system across different age groups, along with key health considerations and insights. Scroll down to explore how surgical needs change throughout life.")
+        .style("font-size", "18px")
+        .style("line-height", "1.6")
+        .style("color", "#444")
+        .style("max-width", "800px")
+        .style("margin", "0 auto");
+
+    // Add "Start Exploring" button
+    introSection.append("button")
+        .text("Start Exploring")
+        .style("margin-top", "20px")
+        .style("padding", "10px 20px")
+        .style("font-size", "16px")
+        .style("background", "#007bff")
+        .style("color", "#fff")
+        .style("border", "none")
+        .style("border-radius", "5px")
+        .style("cursor", "pointer")
+        .on("click", () => {
+            // Show the Male and Female labels
+            d3.select(".left").style("display", "block");
+            d3.select(".right").style("display", "block");
+
+            // Scroll to the timeline
+            scrollToSection("timeline-container");
+            handleScroll();
+        });
+}
+
+function handleScroll() {
+    const introContainer = document.getElementById("intro-container");
+    const introBottom = introContainer.getBoundingClientRect().bottom;
+
+    if (introBottom > 0) {
+        // If the intro is still in view, hide the labels
+        d3.select(".left").style("opacity", "0").style("pointer-events", "none");
+        d3.select(".right").style("opacity", "0").style("pointer-events", "none");
+    } else {
+        // If scrolled past the intro, show the labels
+        d3.select(".left").style("opacity", "1").style("pointer-events", "auto");
+        d3.select(".right").style("opacity", "1").style("pointer-events", "auto");
+    }
+}
+
+function hideLabelsOnLoad() {
+    d3.select(".left").style("display", "none").style("opacity", "0");
+    d3.select(".right").style("display", "none").style("opacity", "0");
+}
+
+// Attach scroll listener
+document.addEventListener("DOMContentLoaded", hideLabelsOnLoad);
+window.addEventListener("scroll", handleScroll);
+
 // Create the timeline visualization
 function createTimeline() {
     const container = d3.select("#timeline-container");
@@ -19,7 +102,7 @@ function createTimeline() {
             .style("pointer-events", "none");
     }
 
-    const margin = { top: 40, right: 40, bottom: 100, left: 40 };
+    const margin = { top: 40, right: 40, bottom: 100, left: 40};
     const width = container.node().clientWidth - margin.left - margin.right;
     const barSpacing = 40; // Space per bar
     const barHeight = 25;
@@ -33,7 +116,7 @@ function createTimeline() {
     // Define scale based on max percentage
     const xScale = d3.scaleLinear()
         .domain([0, globalMaxPercentage * 1.2])
-        .range([0, width * 0.35]);
+        .range([0, width * 0.35 * 1.25]);
 
     // Compute section heights dynamically
     const sectionHeights = ageGroups.map(group => {
