@@ -100,7 +100,6 @@ function getPreventionSuggestions(ageGroupId, gender, procedure) {
 }
 
 // Function to handle user input and display results
-// Function to handle user input and display results
 function handleUserInput() {
     const ageInput = document.getElementById('age-input');
     const genderInput = document.getElementById('gender-input');
@@ -152,7 +151,24 @@ function handleUserInput() {
         <p><strong>Average Hospital Stay:</strong> ${mostCommonProcedure.avg_hospital_stay_days} days</p>
         ${getPreventionSuggestions(group.id, gender, mostCommonProcedure.procedure)}
     `;
+
+    // Scroll to the results section with an adjustable offset
+    const resultRect = resultDiv.getBoundingClientRect();
+    const offset = 150; // Adjust this value to add or subtract space (in pixels)
+    const scrollToPosition = resultRect.top + window.scrollY - offset;
+
+    window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+    });
 }
+
+// Add event listener for the "Enter" key
+document.getElementById('age-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        handleUserInput(); // Trigger the search function
+    }
+});
 
 // Add event listener to the search button
 document.getElementById('search-button').addEventListener('click', handleUserInput);

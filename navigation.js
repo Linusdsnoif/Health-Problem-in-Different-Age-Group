@@ -108,13 +108,10 @@ function createNavigation() {
 
 // Function to update navigation state based on scroll position
 function updateNavigation() {
-    // Update progress bar
     const scrollPosition = window.scrollY;
     const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-    
-    let progressPercentage = (scrollPosition / documentHeight) * 100;
     let activeButton = null;
-    
+
     // Check which section is in the viewport
     ageGroups.forEach(group => {
         const section = document.getElementById(group.id);
@@ -123,11 +120,15 @@ function updateNavigation() {
         const rect = section.getBoundingClientRect();
         const button = document.getElementById(`nav-${group.id}`);
 
+        // Check if the section is at least 50% in view
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            d3.select(button).style("box-shadow", "0 0 0 2px #333");
+            if (activeButton) {
+                d3.select(activeButton).style("box-shadow", "none"); // Remove outline from the previously active button
+            }
+            d3.select(button).style("box-shadow", "0 0 0 2px #333"); // Outline the current active button
             activeButton = button;
         } else {
-            d3.select(button).style("box-shadow", "none");
+            d3.select(button).style("box-shadow", "none"); // Remove outline from inactive buttons
         }
     });
 
@@ -139,15 +140,15 @@ function updateNavigation() {
         if (navBar && buttonsContainer) {
             const buttonRect = activeButton.getBoundingClientRect();
             const containerRect = buttonsContainer.getBoundingClientRect();
-            progressPercentage = ((buttonRect.left - containerRect.left) / containerRect.width) * 100;
-        }
-    } 
-    if (scrollPosition > 3200) {
-        progressPercentage = 100;
-    }
+            const progressPercentage = ((buttonRect.left - containerRect.left) / containerRect.width) * 100;
 
-    // Apply progress bar width
-    d3.select(".progress-bar").style("width", `${progressPercentage}%`);
+            // Apply progress bar width
+            d3.select(".progress-bar").style("width", `${progressPercentage}%`);
+        }
+    } else if (scrollPosition >= documentHeight) {
+        // If scrolled past the last section, set progress bar to 100%
+        d3.select(".progress-bar").style("width", "100%");
+    }
 }
 
 
@@ -157,9 +158,23 @@ function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
         const navHeight = document.querySelector(".nav-container").getBoundingClientRect().height;
+        const sectionRect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate the scroll position to center the section in the middle of the page
+        const sectionTop = sectionRect.top + window.scrollY;
+        const offset = (windowHeight / 2) - (sectionRect.height / 1.9);
+        const scrollToPosition = sectionTop - offset - navHeight;
+
+        // Scroll to the calculated position
         window.scrollTo({
-            top: section.getBoundingClientRect().top + window.scrollY - navHeight - 20,
+            top: scrollToPosition,
             behavior: "smooth"
         });
+
+        // Force update the navigation state after scrolling
+        setTimeout(() => {
+            updateNavigation();
+        }, 500); // Wait for the scroll to complete before updating
     }
 }
