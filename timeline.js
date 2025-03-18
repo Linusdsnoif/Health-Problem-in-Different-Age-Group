@@ -218,7 +218,6 @@ function createTimeline() {
             tooltip.style("visibility", "visible")
                 .html(`
                     <strong>${p.procedure}</strong><br>
-                    <b>Count:</b> ${p.count}<br>
                     <b>Percentage:</b> ${p.percentage}%<br>
                     <b>Sex:</b> ${gender}<br>
                     <b>Mortality Rate:</b> ${p.mortality_rate}%<br>
