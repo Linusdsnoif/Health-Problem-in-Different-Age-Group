@@ -51,8 +51,8 @@ function createIntroduction() {
             d3.select(".left").style("display", "block");
             d3.select(".right").style("display", "block");
 
-            // Scroll to the timeline
-            scrollToSection("timeline-container");
+            // Scroll to the top of the timeline (Infant section)
+            scrollToSection("infant", false); // Pass `false` to scroll to the top
             handleScroll();
         });
 }

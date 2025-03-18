@@ -154,17 +154,23 @@ function updateNavigation() {
 
 
 // Function to scroll to a section
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, center = true) {
     const section = document.getElementById(sectionId);
     if (section) {
         const navHeight = document.querySelector(".nav-container").getBoundingClientRect().height;
         const sectionRect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Calculate the scroll position to center the section in the middle of the page
-        const sectionTop = sectionRect.top + window.scrollY;
-        const offset = (windowHeight / 2) - (sectionRect.height / 1.9);
-        const scrollToPosition = sectionTop - offset - navHeight;
+        let scrollToPosition;
+
+        if (center) {
+            // Calculate the scroll position to center the section in the middle of the page
+            const offset = (windowHeight / 2) - (sectionRect.height / 1.9);
+            scrollToPosition = sectionRect.top + window.scrollY - offset - navHeight;
+        } else {
+            // Scroll to the top of the section
+            scrollToPosition = sectionRect.top + window.scrollY - navHeight;
+        }
 
         // Scroll to the calculated position
         window.scrollTo({
