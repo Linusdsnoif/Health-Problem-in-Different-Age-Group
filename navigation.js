@@ -34,9 +34,9 @@ function createNavigation() {
     const searchInput = searchContainer.append("input")
         .attr("type", "number")
         .attr("class", "age-input")
-        .attr("placeholder", "Find your age (0-100)...")
+        .attr("placeholder", "Find your age (0-94)...")
         .attr("min", "0")
-        .attr("max", "100")
+        .attr("max", "94")
         .on("input", function() {
             // Reset error state
             errorFeedback.style("display", "none");
@@ -53,8 +53,8 @@ function createNavigation() {
                 const age = +inputValue;
                 
                 // Validate age range
-                if (age < 0 || age > 100 || isNaN(age)) {
-                    errorFeedback.text("Please enter an age between 0 and 100");
+                if (age < 0 || age > 94 || isNaN(age)) {
+                    errorFeedback.text("Please enter an age between 0 and 94");
                     errorFeedback.style("display", "block");
                     this.style.borderColor = "red";
                     return;

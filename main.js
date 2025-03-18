@@ -109,8 +109,8 @@ function handleUserInput() {
     const age = parseInt(ageInput.value);
     const gender = genderInput.value;
 
-    if (isNaN(age) || age < 0 || age > 100) {
-        resultDiv.innerHTML = "<p>Please enter a valid age between 0 and 100.</p>";
+    if (isNaN(age) || age < 0 || age > 94) {
+        resultDiv.innerHTML = "<p>Please enter a valid age between 0 and 94.</p>";
         return;
     }
 
